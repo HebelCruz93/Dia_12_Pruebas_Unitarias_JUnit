@@ -38,7 +38,7 @@ public class CategoriaServiceImp implements ICategoriaService{
 	  */
 	@Override
 	@Transactional(readOnly = true)
-	public Categoria findById(Long id) {
+	public Categoria findById(int id) {
 		
 		return catRepository.findById(id).orElse(null);
 	}
@@ -63,7 +63,7 @@ public class CategoriaServiceImp implements ICategoriaService{
 	  */
 	@Override
 	@Transactional
-	public void delete(Long id) {
+	public void delete(int id) {
 		
 		catRepository.deleteById(id);
 	}

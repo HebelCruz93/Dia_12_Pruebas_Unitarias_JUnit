@@ -25,6 +25,13 @@ public class ProductoServiceImp implements IProductoService {
 	public List<Producto> findAll() {		
 		return (List<Producto>) proRepository.findAll();
 	}	
+	
+	@Transactional
+	public List<Producto> findAllProducts(){
+		List<Producto> productos = (List<Producto>) proRepository.findAll();
+		return productos;
+	}
+	
 	/*Parametros de entrada: id
 	  Descripción: Muestra una categoria por id
 	  Retorno: categoria del id
@@ -32,7 +39,7 @@ public class ProductoServiceImp implements IProductoService {
 	  */
 	@Override
 	@Transactional(readOnly = true)
-	public Producto findById(Long id) {		
+	public Producto findById(int id) {		
 		return proRepository.findById(id).orElse(null);
 	}
 	
@@ -55,7 +62,7 @@ public class ProductoServiceImp implements IProductoService {
 	  */
 	@Override
 	@Transactional
-	public void delete(Long id) {		
+	public void delete(int id) {		
 		proRepository.deleteById(id);
 	}
 	

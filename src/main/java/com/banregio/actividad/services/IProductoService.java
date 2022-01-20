@@ -8,9 +8,9 @@ import com.banregio.actividad.models.entity.Producto;
 public interface IProductoService {
 	public List<Producto> findAll();
 	
-	public Producto findById (Long id);
+	public Producto findById (int id);
 	
 	public Producto save (Producto producto);
 		
-	public void delete (Long id);
+	public void delete (int id);
 }
